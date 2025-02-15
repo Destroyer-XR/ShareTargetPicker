@@ -214,7 +214,7 @@ const data = {
                 "height": "sm",
                 "action": {
                     "type": "uri",
-                    "label": "ติดต่อแอดมิน",
+                    "label": "แชร์ให้เพื่อน",
                     "uri": "https://liff.line.me/2006065768-lKEA3oOb"
                 },
                 "color": "#650000"
@@ -239,47 +239,38 @@ const data = {
         "flex": 0
     }
 }
-
-liff
-    .init({ liffId: liffId })
+liff.init({ liffId: liffId })
     .then(() => {
         if (!liff.isLoggedIn()) {
             liff.login();
         } else {
-            shareMessage()
+            shareMessage();
         }
-    }).then((res) => {
+    })
+    .catch((err) => {
+        console.error("เกิดข้อผิดพลาดในการโหลด LIFF:", err);
+    });
+
+function shareMessage() {
+    liff.shareTargetPicker([
+        {
+            "type": "flex",
+            "altText": "พี่่ค่ะ อ่านแชทหนูหน่อย",
+            "contents": data
+        }
+    ], {
+        isMultiple: true
+    })
+    .then((res) => {
+        console.log(res);
         if (res) {
             console.log("แชร์สำเร็จ!");
-            liff.closeWindow(); // 🔴 ปิดหน้าต่าง LIFF
+            liff.closeWindow(); // ✅ ปิดหน้าต่าง LIFF
         } else {
-            console.log("ผู้ใช้กดยกเลิกการแชร์");
+            console.log("ผู้ใช้ยกเลิกการแชร์");
         }
     })
     .catch((err) => {
         console.error("เกิดข้อผิดพลาดในการแชร์:", err);
     });
-
-
-function shareMessage() {
-    liff.shareTargetPicker(
-        [
-            {
-                "type": "flex",
-                "altText": "พี่่ค่ะ อ่านแชทหนูหน่อย",
-                "contents": data
-            }
-        ],
-        {
-            isMultiple: true
-        })
-        .then((res) => {
-            console.log(res);
-            if (res) {
-                console.log("แชร์สำเร็จ!");
-                liff.closeWindow(); // 🔴 ปิดหน้าต่าง
-            } else {
-                console.log("ผู้ใช้ยกเลิกการแชร์");
-            }
-        });
 }
