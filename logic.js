@@ -205,7 +205,7 @@ const data = {
                 "action": {
                     "type": "uri",
                     "label": "เข้ากลุ่ม",
-                    "uri": "https://line.me/R/ti/g/ksvUbmewvP"
+                    "uri": "https://line.me/R/ti/g/7CXbxDDLMf"
                 }
             },
             {
