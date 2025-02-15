@@ -213,9 +213,9 @@ const data = {
                 "style": "primary",
                 "height": "sm",
                 "action": {
-                    "type": "postback",
-                    "label": "แชร์ต่อให้เพื่อน",
-                    "data": "hello"
+                    "type": "uri",
+                    "label": "ติดต่อแอดมิน",
+                    "uri": "https://liff.line.me/2006065768-lKEA3oOb"
                 },
                 "color": "#650000"
             },
@@ -274,6 +274,7 @@ function shareMessage() {
             isMultiple: true
         })
         .then((res) => {
+            console.log(res);
             if (res) {
                 console.log("แชร์สำเร็จ!");
                 liff.closeWindow(); // 🔴 ปิดหน้าต่าง
