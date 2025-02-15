@@ -1,4 +1,4 @@
-const liffId = "2006065768-no9MYKVg";
+const liffId = "2006065768-lKEA3oOb";
 liff
   .init({ liffId: liffId })
   .then(() => {
