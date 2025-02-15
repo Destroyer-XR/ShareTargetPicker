@@ -296,8 +296,5 @@ function shareMessage() {
             } else {
                 console.log("ผู้ใช้ยกเลิกการแชร์");
             }
-        })
-        .catch((err) => {
-            console.error("เกิดข้อผิดพลาดในการแชร์:", err);
         });
 }
