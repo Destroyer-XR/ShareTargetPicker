@@ -244,7 +244,9 @@ liff.init({ liffId: liffId })
         if (!liff.isLoggedIn()) {
             liff.login();
         } else {
-            shareMessage();
+            shareMessage().then(()=>{
+                liff.closeWindow();
+            });
         }
     })
     .catch((err) => {
@@ -255,7 +257,7 @@ function shareMessage() {
     liff.shareTargetPicker([
         {
             "type": "flex",
-            "altText": "พี่่ค่ะ อ่านแชทหนูหน่อย",
+            "altText": "พี่ค่ะ อ่านแชทหนูหน่อย",
             "contents": data
         }
     ], {
