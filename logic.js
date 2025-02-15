@@ -256,7 +256,6 @@ liff
           isMultiple: true
         }
       );
-    window.close()
   })
   .catch((err) => {
     console.log(err.code, err.message);
