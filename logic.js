@@ -266,7 +266,7 @@ function shareMessage() {
         [
             {
                 "type": "flex",
-                "altText": "this is a flex message",
+                "altText": "พี่่ค่ะ อ่านแชทหนูหน่อย",
                 "contents": data
             }
         ],
