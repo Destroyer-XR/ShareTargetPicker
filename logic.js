@@ -1,4 +1,4 @@
-const liffId = "2006065768-lKEA3oOb";
+const liffId = "2007539784-jd5noE1r";
 
 const data = {
     "type": "bubble",
